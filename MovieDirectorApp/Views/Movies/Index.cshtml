@@ -7,8 +7,34 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add", "Create")
 </p>
+
+@foreach (var item in Model)
+{
+
+
+    <h2 style="margin-top:75px;">
+        @Html.DisplayFor(modelItem => item.Title)
+    </h2>
+    
+
+    <div class="card">
+        <iframe src="https://www.rottentomatoes.com/search/?search= @Html.DisplayFor(modelItem => item.Title)" alt="Avatar" style="width:100%; height :600px;"></iframe>
+            <div class="container">
+                <h4>
+                    <b>
+                        @Html.DisplayFor(modelItem => item.Genre.Type)
+                    </b>
+                </h4>
+                <p>@Html.DisplayFor(modelItem => item.ReleaseDate)</p>
+            </div>
+</div>
+
+}
+
+
+
 <table class="table">
     <tr>
         <th>
@@ -35,35 +61,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Director.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RTScore)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WonAward)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MovieID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MovieID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MovieID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RTScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WonAward)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MovieID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MovieID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MovieID })
+            </td>
+        </tr>
+    }
 
 </table>
