@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -16,10 +19,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Movie Director App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <p><span class="glyphicon glyphicon-film"></span>
+                </p>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="margin-top:30px;">
                     @*(link name, index page in controller, controller to use)*@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Movies", "Index", "Movies")</li>

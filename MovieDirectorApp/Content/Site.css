@@ -1,5 +1,11 @@
-﻿body {
-    padding-top: 50px;
+﻿.glyphicon{
+    display:flex;
+    
+    font-size:75px;
+}
+
+body {
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
@@ -21,4 +27,140 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+/*movie background*/
+
+* {
+    box-sizing: border-box;
+}
+
+.video-background {
+    background: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+}
+
+    .video-foreground,
+    .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+#vidtop-content {
+    top: 0;
+    color: #fff;
+}
+
+.vid-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 33%;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    padding: 1rem;
+    font-family: Avenir, Helvetica, sans-serif;
+}
+
+    .vid-info h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 0;
+        line-height: 1.2;
+    }
+
+    .vid-info a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        background: rgba(0,0,0,0.5);
+        transition: .6s background;
+        border-bottom: none;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .vid-info {
+        width: 50%;
+        padding: .5rem;
+    }
+
+        .vid-info h1 {
+            margin-bottom: .2rem;
+        }
+}
+
+@media all and (max-width: 500px) {
+    .vid-info .acronym {
+        display: none;
+    }
+}
+
+
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+/* Style page content */
+.main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
 }
