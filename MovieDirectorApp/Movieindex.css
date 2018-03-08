@@ -1,20 +1,11 @@
-﻿.btn {
-    background-color: dimgray;
-    border: none;
-    color: yellow;
-    padding: 12px 16px;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-ul{
-    margin-bottom:30px;
-}
-
-body {
+﻿body {
     background: #282828; /* match border color */
-    text-align: center;
 }
+
+.btn.btn-default{
+    margin-top:50px;
+
+} 
 
 a {
     color: white;
@@ -23,9 +14,8 @@ a {
 small {
     color: white;
 }
-h{
-    color:white;
-}
+h,h1,b,p,th,td{color:white;}
+
 .logo {
     font: 84px 'Arial Narrow', sans-serif; /* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
     color: #fefefe;

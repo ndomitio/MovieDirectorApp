@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<MovieDirectorApp.Models.Movie>
-
+<link href="~/Movieindex.css" rel="stylesheet" />
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1 class="logo">
+    <span class="word1"></span>
+    <span class="word2">Index</span>
+</h1>
 
-<p>
-    @Html.ActionLink("Add", "Create")
-</p>
 
 <div class="row">
     @foreach (var item in Model)
@@ -40,8 +40,10 @@
     }
 </div>
 
+<a class="btn btn-default" href="@Url.Action("Create", "Movies")"><i class="fas fa-user-plus"></i></a>
 
-<table class="table">
+
+<table class="table" style="margin-top:50px;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Director.Name)

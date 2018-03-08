@@ -6,10 +6,12 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color:#ed4747;
+    
     overflow-x: hidden;
     padding-top: 20px;
     font-size: 25px;
+    
 }
 
 .main {
@@ -17,16 +19,19 @@
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
-a{margin-top:10px;
-  margin-bottom:10px;
+
+a {
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-height: 450px) {
-    .container{
+    .container {
         padding-top: 15px;
     }
 
-        .nav navbar nav li {
-            font-size: 18px;
-        }
+    .nav navbar nav li {
+        font-size: 18px;
+    }
 }
