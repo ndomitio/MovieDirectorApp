@@ -1,7 +1,13 @@
-﻿.glyphicon{
+﻿/*icon in top left corner*/
+.glyphicon{
     display:flex;
     
     font-size:75px;
+}
+
+/*website under title*/
+iframe2{
+    max-width:50vw;
 }
 
 body {
