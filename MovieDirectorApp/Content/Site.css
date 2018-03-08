@@ -6,13 +6,13 @@
 }
 
 /*website under title*/
-iframe2{
-    max-width:50vw;
+.card{
+    max-width: 33vw;
 }
-
 body {
     padding-top: 100px;
     padding-bottom: 20px;
+    font-family:Cambria;
 }
 
 /* Set padding to keep content from hitting the edges */

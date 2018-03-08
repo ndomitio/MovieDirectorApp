@@ -17,6 +17,9 @@
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
+a{margin-top:10px;
+  margin-bottom:10px;
+}
 
 @media screen and (max-height: 450px) {
     .container{
