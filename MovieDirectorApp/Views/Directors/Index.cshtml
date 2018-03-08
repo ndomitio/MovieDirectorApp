@@ -9,25 +9,25 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DirectorID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DirectorID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DirectorID })
-        </td>
-    </tr>
-}
+<iframe style="width:100%; height:60vh; margin-top:50px;" src="https://www.youtube.com/embed/jA_2uQ-27vI?autoplay=1"></iframe>
 
-</table>
+
+<div class="row" style="margin-top:50px;">
+   
+
+    @foreach (var item in Model)
+    {
+        <ul>
+            <h>
+                @Html.DisplayFor(modelItem => item.Name)
+            </h>
+            <li>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DirectorID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DirectorID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DirectorID })
+            </li>
+        </ul>
+    }
+
+</div>
