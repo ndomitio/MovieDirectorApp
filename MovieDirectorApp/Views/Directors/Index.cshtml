@@ -1,10 +1,16 @@
 ﻿@model IEnumerable<MovieDirectorApp.Models.Director>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<link href="~/DirectorsIndex.css" rel="stylesheet" />
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1 class="logo">
+    <span class="word1"></span>
+    <span class="word2">Directors</span>
+</h1>
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -14,7 +20,7 @@
 
 
 <div class="row" style="margin-top:50px;">
-   
+
 
     @foreach (var item in Model)
     {
@@ -25,7 +31,10 @@
             <li>
                 @Html.ActionLink("Edit", "Edit", new { id = item.DirectorID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.DirectorID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.DirectorID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.DirectorID })|
+                <i class="fab fa-imdb" style="font-size:48px;color:yellow;"></i>
+
+
             </li>
         </ul>
     }

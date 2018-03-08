@@ -166,6 +166,7 @@
     <Content Include="Content\images\darkknight1lg.jpg" />
     <Content Include="Content\images\director-s-cut-board-md.png" />
     <Content Include="Content\images\joker.jpg" />
+    <Content Include="DirectorsIndex.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
