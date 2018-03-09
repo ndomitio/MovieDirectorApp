@@ -2,7 +2,7 @@
 <html>
 <head>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
+    <script src="~/JavaScriptMARVEL.js"></script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,42 +12,55 @@
 </head>
 <body onload="myFunction()" style="margin:0;">
 
-    <div id="loader"></div>
+
+    @*<div id="loader">
+        <div class="flecha1"></div>
+        <div class="flecha2"></div>
+        <div class="flecha3"></div>
+        <div class="flecha4"></div>
+    </div>*@
+
+
+    @*<div id="loader"></div>*@
+    <div id="loader">
+            <img id="bnw" src="http://preview.ibb.co/kEMjQb/marvel.png" width="200">
+            <img id="colored" src="http://preview.ibb.co/fhn2BG/marvel.jpg" width="200">
+        </div>
 
     <div style="display:none;" id="myDiv" class="animate-bottom">
-        
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <p>
-                    <span class="glyphicon glyphicon-film"></span>
-                </p>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" style="margin-top:30px;">
-                    @*(link name, index page in controller, controller to use)*@
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
-                    <li>@Html.ActionLink("Directors", "Index", "Directors")</li>
-                    <li>@Html.ActionLink("Genres", "Index", "Genres")</li>
 
-                </ul>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <p>
+                        <span class="glyphicon glyphicon-film"></span>
+                    </p>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="margin-top:30px;">
+                        @*(link name, index page in controller, controller to use)*@
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+                        <li>@Html.ActionLink("Directors", "Index", "Directors")</li>
+                        <li>@Html.ActionLink("Genres", "Index", "Genres")</li>
+
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
 
     </div>
 

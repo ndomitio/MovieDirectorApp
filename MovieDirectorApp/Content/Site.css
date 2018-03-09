@@ -1,7 +1,194 @@
-﻿/*loader effect*/
+﻿/*#loader {
+    margin: auto;
+    margin-top: 80px;
+    background: transparent;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
-#loader {
+.flecha1 {
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent;
+    /*border-right: 90px solid #64B5F6;*/
+    /*border-right: 90px solid #8e1111;
+    border-radius: 5% 0% 100% 0%;
+    -moz-border-radius: 5% 0% 100% 0%;
+    transform-origin: top;
+    transform: rotate(3deg);
+    animation: rotator1 1.4s linear infinite;
+}
+
+.flecha2 {
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent;
+    border-right: 90px solid #cc1616;
+    /*border-right: 90px solid #2196F3;*/
+    border-radius: 5% 0% 100% 0%;
+    transform-origin: top;
+    transform: rotate(6deg);
+    animation: rotator2 1.4s linear infinite;
+}
+
+/*.flecha3 {
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent;
+    border-right: 90px solid #c12a2a;
+    /*border-right: 90px solid #1976D2;*/
+    border-radius: 5% 0% 100% 0%;
+    transform-origin: top;
+    transform: rotate(9deg);
+    animation: rotator3 1.4s linear infinite;
+}
+
+.flecha4 {
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent;
+    /*border-right: 90px solid #1565C0;*/
+    border-right: 90px solid #e55b5b;
+    border-radius: 5% 0% 100% 0%;
+    transform-origin: top;
+    transform: rotate(12deg);
+    animation: rotator4 1.4s linear infinite;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Code Pro',monospace;
+    color: #0D47A1;
+    font-size: 1.5em;
+    animation: textAnimation 1.4s linear infinite;
+}
+
+.text2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Code Pro',monospace;
+    color: #0D47A1;
+    font-size: 0.7em;
+}
+
+body {
+    background: #BBDEFB;
+}
+
+@keyframes textAnimation {
+    0% {
+        color: #0D47A1;
+    }
+
+    100% {
+        color: #1A237E;
+    }
+}
+
+@keyframes rotator1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotator2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotator3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotator4 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}*/*/*/
+
+
+marvel loader
+
+body {
+    text-align: center;
+    background: black;
+}
+
+#bnw {
+    position: absolute;
+    top: 40vh;
+    left: 50px;
+}
+
+#colored {
+    position: absolute;
+    top: 40vh;
+    left: 50px;
+    clip-path: polygon(0 0,0.01% 0,0.01% 100%,0 100%);
+}
+
+#img-container {
+    position: relative;
+    width: 300px;
+    margin: 0px auto;
+}
+
+
+
+/*loader effect*/
+
+
+/*#loader {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -69,7 +256,7 @@
         bottom: 0;
         opacity: 1
     }
-}
+}*/
 
 #myDiv {
     display: none;
@@ -80,7 +267,8 @@
 /*icon in top left corner*/
 .glyphicon{
     display:flex;
-    
+    margin-top:10px;
+    margin-left:25px;
     font-size:75px;
 }
 
