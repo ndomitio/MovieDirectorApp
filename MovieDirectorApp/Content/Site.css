@@ -1,6 +1,388 @@
-﻿/*loader effect*/
+﻿/*/*loader effect*/
 
-#loader {
+body {
+    margin: 0;
+    background: #333;
+}
+
+@keyframes arrow-spin {
+    100% {
+        transform: rotate(179deg);
+    }
+}
+
+@-webkit-keyframes arrow-spin {
+    100% {
+        -webkit-transform: rotate(179deg);
+    }
+}
+
+.psoload,
+.psoload *,
+.psoload *:before,
+.psoload *:after {
+    box-sizing: border-box;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.psoload {
+    position: relative;
+    margin: 30px auto;
+    height: 150px;
+    width: 150px;
+}
+
+    .psoload .straight,
+    .psoload .curve {
+        position: absolute;
+        top: 17.5%;
+        left: 17.5%;
+        width: 65%;
+        height: 65%;
+        border-radius: 100%;
+        animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite;
+        -webkit-animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite;
+    }
+
+        .psoload .straight:before,
+        .psoload .straight:after {
+            content: '';
+            position: absolute;
+            width: 15%;
+            border-bottom: 3px solid #eee;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .psoload .straight:before {
+            top: 5px;
+            left: 5px;
+        }
+
+        .psoload .straight:after {
+            bottom: 5px;
+            right: 5px;
+        }
+
+        .psoload .curve:before,
+        .psoload .curve:after {
+            content: '';
+            position: absolute;
+            width: 45px;
+            height: 10px;
+            border: solid 3px transparent;
+            border-top-color: #eee;
+            border-radius: 50%/10px 10px 0 0;
+            z-index: 90001;
+        }
+
+        .psoload .curve:before {
+            transform: rotate(-63deg) translateX(-27px) translateY(-4px);
+            -webkit-transform: rotate(-63deg) translateX(-27px) translateY(-4px);
+        }
+
+        .psoload .curve:after {
+            bottom: 5px;
+            right: 5px;
+            transform: rotate(115deg) translateX(-26px) translateY(-12px);
+            -webkit-transform: rotate(115deg) translateX(-26px) translateY(-12px);
+        }
+
+    .psoload .center {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+        height: 60%;
+        border-radius: 100%;
+        border: 3px solid #eee;
+    }
+
+    .psoload .inner {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        border-radius: 100%;
+        animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite reverse;
+        -webkit-animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite reverse;
+    }
+
+        .psoload .inner:before,
+        .psoload .inner:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-width: 11px;
+            border-bottom-color: #eee;
+        }
+
+        .psoload .inner:before {
+            top: 12px;
+            left: 12px;
+            transform: rotate(128deg);
+            -webkit-transform: rotate(128deg);
+        }
+
+        .psoload .inner:after {
+            bottom: 12px;
+            right: 12px;
+            transform: rotate(-48deg);
+            -webkit-transform: rotate(-48deg);
+        }
+
+/*3 circles loader effect*/
+
+/* Inspirated from  http://www.alessioatzeni.com/wp-content/tutorials/html-css/CSS3-loading-animation-loop/index.html */
+/*.ouro {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    margin: 1em;
+    border-radius: 50%;
+    background: none repeat scroll 0 0 #DDDDDD;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,.1) inset, 0 0 25px rgba(0,0,255,0.075);
+}
+
+    .ouro:after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        display: block;
+        height: 28px;
+        width: 28px;
+        background: none repeat scroll 0 0 #F2F2F2;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+    }
+
+    .ouro > span {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        overflow: hidden;
+    }
+
+.left {
+    left: 0
+}
+
+.right {
+    left: 50%
+}
+
+.anim {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+    background: none repeat scroll 0 0 #508EC3;
+    opacity: 0.8;
+    -webkit-animation: ui-spinner-rotate-left 3s infinite;
+    animation: ui-spinner-rotate-left 3s infinite;
+    -webkit-transform-origin: 0 50% 0;
+    transform-origin: 0 50% 0;
+}
+
+.left .anim {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.right .anim {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    left: -100%;
+    -webkit-transform-origin: 100% 50% 0;
+    transform-origin: 100% 50% 0;
+}
+
+/* v2 */
+.ouro2 .anim {
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+}
+
+.ouro2 .right .anim {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+/* v3 */
+.ouro3 .anim {
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+.ouro3 .right .anim {
+    -webkit-animation-name: ui-spinner-rotate-right;
+    -webkit-animation-delay: 0;
+    -webkit-animation-delay: 1.5s;
+    animation-name: ui-spinner-rotate-right;
+    animation-delay: 0;
+    animation-delay: 1.5s;
+}
+
+/* round variation */
+.round .ouro:after {
+    display: none
+}
+
+/* double variation */
+.double .ouro:after {
+    height: 13px;
+    width: 13px;
+    left: 7px;
+    top: 7px;
+    border: 10px solid #ddd;
+    background: transparent;
+    box-shadow: none;
+}
+
+@keyframes ui-spinner-rotate-right {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(180deg)
+    }
+
+    50% {
+        transform: rotate(180deg)
+    }
+
+    75% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes ui-spinner-rotate-left {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(180deg)
+    }
+
+    75% {
+        transform: rotate(180deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes ui-spinner-rotate-right {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+
+    25% {
+        -webkit-transform: rotate(180deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+
+    75% {
+        -webkit-transform: rotate(360deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes ui-spinner-rotate-left {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+
+    25% {
+        -webkit-transform: rotate(0deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+
+    75% {
+        -webkit-transform: rotate(180deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+/*
+ * Some bugs with Chrome (Android), Safari and Opera, I'll try to see how http://atomeye.com/projects/sass-css-spinner.html made his code.
+ */
+
+/* presentation styles */
+html {
+    height: 100%
+}
+
+body {
+    text-align: center;
+    background: radial-gradient(circle, #fff 0%, #bbb 85%) no-repeat;
+    background: -webkit-radial-gradient(circle, #fff 0%, #bbb 85%) no-repeat;
+    height: 100%;
+    display: table;
+    width: 100%
+}
+
+.block {
+    display: table-cell;
+    vertical-align: middle
+}
+
+h1, a {
+    margin-top: 1em;
+    font-family: "Open Sans Light", "Open Sans", "Segoe UI", Helvetica, Arial;
+    color: #888;
+    font-weight: lighter;
+}
+
+.info {
+    margin-top: 25px
+}
+
+    .info a {
+        font-size: 12px;
+        color: #999
+    }
+
+    .info br + a {
+        text-decoration: none
+    }*/*/
+/*#FLECHAloader {
     background: #1e1e1e;
 }
 
@@ -371,7 +753,7 @@
     100% {
         background: #ABF8FF;
     }
-}
+}*/
 /*#loader {
     margin: auto;
     margin-top: 80px;
